@@ -24,6 +24,7 @@ import Original_Logo from './Original_Logo.svg'
 import list_icon from './list_icon.svg'
 import home_icon from './home_icon.svg'
 import Grayscale_Transparent from './Grayscale_Transparent.svg'
+import gradient from './gradient.svg'
 import facebook_icon from './facebook_icon.svg'
 import email_icon from './email_icon.png'
 import dashboard_icon from './dashboard_icon.svg'
@@ -45,6 +46,7 @@ export const assets = {
     email_icon,
     facebook_icon,
     Grayscale_Transparent,
+    gradient,
     home_icon,
     list_icon,
     Original_Logo,
