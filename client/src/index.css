@@ -11,4 +11,7 @@
 
 @theme {
   --color-primary: #EEEAE5;
+  --color-secondary: #C5D8AF;
+  --color-text: #546259;
+  --color-accent: #495A34;
 }
