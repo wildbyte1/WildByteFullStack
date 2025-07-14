@@ -35,6 +35,7 @@ import comment_icon from './comment_icon.svg'
 import comments_icon from './comments_icon.svg'
 import blog_icon from './blog_icon.png'
 import bin_icon from './bin_icon.svg'
+import star_solid from './star_solid.svg'
 
 export const assets = {
     add_icon,
@@ -58,6 +59,7 @@ export const assets = {
     upload_area,
     user_icon,
     x_twitter,
+   star_solid,
 }
 export const blogCategories = ['All', 'Africa', 'Asia', 'Europe', 'North America', 'South America', 'Oceania']
 
