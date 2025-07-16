@@ -12,6 +12,20 @@ const Header = () => {
         <h1 className='text-3xl sm:text-5xl font-semibold sm:leading-16 text-accent'>
           Welcome to <span className='text-secondary'>Wild Byte</span>
         </h1>
+
+        <p className='my-6 sm:my-8 max-w-2xl m-auto max-sm:text -xs text-gray-500'>
+          Wild Byte is a full-stack platform that combines natural history,
+          technology, and storytelling to help people of all ages connect with
+          nature. Through interactive content and community-driven stories, it
+          makes learning about the wild both engaging and accessible.
+        </p>
+
+        <form className='flex justify-between max-w-lg max-sm:scale-75 mx-auto border border-secondary bg-white rounded overflow-hidden'>
+            <input type="text" placeholder='Search for blogs' required className='w-full pl-4 outline-none' />
+            <button type='submit' className='bg-text text-white px-8 py-2 m-1.5 rounded hover:scale-105 transition-all cursor-pointer'>Search</button>
+            
+        </form>
+
       </div>
       <img
         src={assets.gradient}
