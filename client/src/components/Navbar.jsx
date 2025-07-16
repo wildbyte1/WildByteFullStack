@@ -16,10 +16,10 @@ const navigate = useNavigate();
       />
       <button
         onClick={() => navigate('/admin')}
-        className='flex items-center gap-2 rounded-full text-sm cursor-pointer bg-primary text-text px-10 py-2.5'
+        className='flex items-center gap-2 rounded-full text-sm cursor-pointer bg-text text-white px-10 py-2.5'
       >
         Login
-        <img src={assets.arrow} className='w-3 bg-text' alt='arrow' />
+        <img src={assets.arrow} className='w-3' alt='arrow' />
       </button>
     </div>
   );
