@@ -25,10 +25,11 @@ const Header = () => {
 
         {/* Description */}
         <p className='my-6 sm:my-8 max-w-2xl mx-auto text-xs sm:text-base text-gray-500'>
-          Wild Byte is a full-stack platform that combines natural history,
+          Wild Byte is an interactive platform that combines natural history,
           technology, and storytelling to help people of all ages connect with
-          nature. Through interactive content and community-driven stories, it
-          makes learning about the wild both engaging and accessible.
+          nature. Through stories of wildlife, it fosters curiosity and respect
+          for the natural world, making learning about the wild both engaging
+          and accessible.
         </p>
 
         {/* Search Form */}
