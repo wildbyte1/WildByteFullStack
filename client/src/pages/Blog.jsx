@@ -117,6 +117,31 @@ const Blog = () => {
             </button>
           </form>
         </div>
+
+        {/* Share Buttons */}
+        <div className='my-24 max-w-3xl mx-auto'>
+          <p className='font-semibold my-4'>
+            Share this article on social media
+          </p>
+          <div className='flex'>
+            <img
+              src={assets.facebook_icon}
+              width={50}
+              alt='Wild Byte Facebook'
+            />
+            <img
+              src={assets.instagram_icon}
+              width={50}
+              alt='Wild Byte Instagram'
+            />
+            <img src={assets.x_twitter} width={50} alt='Wild Byte X-Twitter' />
+            <img
+              src={assets.tiktok_icon}
+              width={50}
+              alt='Wild Byte TikTok'
+            />
+          </div>
+        </div>
       </div>
     </div>
   ) : (
