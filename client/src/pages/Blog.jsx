@@ -21,23 +21,36 @@ const Blog = () => {
   },[])
 
   return data ? (
-    <div className='relative'>
+    <div className='relative w-full'>
       <img
         src={assets.gradient}
         alt=''
-        className='absolute top-0 left-1/2 -translate-x-1/2 -z-10 opacity-50 w-full max-w-6xl'
+        className='absolute top-0 left-0 -z-10 opacity-40 w-full h-55 object-cover'
       />
 
       <Navbar />
 
       <div className='text-center mt-20 text-gray-600'>
-        <p className='text-text py-4 font-medium'>Published on {Moment(data.createdAt).format('MMMM Do YYYY')}</p>
-        <h1 className='text-2xl sm:text-5xl font-semibold max-w-2xl mx-auto text-accent'>{data.title}</h1>
+        <p className='text-text py-4 font-medium'>
+          Published on {Moment(data.createdAt).format('MMMM Do YYYY')}
+        </p>
+        <h1 className='text-2xl sm:text-5xl font-semibold max-w-2xl mx-auto text-text'>
+          {data.title}
+        </h1>
         <h2 className='my-5 max-w-lg truncate mx-auto'>{data.subTitle}</h2>
-        <p className='inline-block py-1 px-4 rounded-full mb-6 border text-sm border-accent bg-primary font-medium text-text'>Vesey Victoria</p>
+        <p className='inline-block py-1 px-4 rounded-full mb-6 border text-sm border-accent bg-primary font-medium text-text'>
+          Vesey Victoria
+        </p>
       </div>
 
-      <div></div>
+      <div className='mx-5 max-w-3xl md:mx-auto my-10 mt-6'>
+        <img src={data.image} alt='' className='rounded-3xl mb-5' />
+
+        <div
+          className='rich-text max-w-3xl mx-auto'
+          dangerouslySetInnerHTML={{ __html: data.description }}
+        ></div>
+      </div>
     </div>
   ) : (
     <div>Loading... </div>
