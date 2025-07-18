@@ -120,30 +120,20 @@ const Blog = () => {
 
         {/* Share Buttons */}
         <div className='my-24 max-w-3xl mx-auto'>
-          <p className='font-semibold my-4'>
-            Share this article on social media
-          </p>
-          <div className='flex'>
-            <img
-              src={assets.facebook_icon}
-              width={50}
-              alt='Wild Byte Facebook'
-            />
-            <img
-              src={assets.instagram_icon}
-              width={50}
-              alt='Wild Byte Instagram'
-            />
-            <img src={assets.x_twitter} width={50} alt='Wild Byte X-Twitter' />
-            <img
-              src={assets.tiktok_icon}
-              width={50}
-              alt='Wild Byte TikTok'
-            />
+  <p className='font-semibold my-4 text-accent'>Share this article on social media</p>
+  <div className='flex gap-4'>
+    {[assets.facebook_icon, assets.instagram_icon, assets.x_twitter, assets.tiktok_icon, assets.email_icon].map((icon, index) => (
+      <div
+        key={index}
+        className='w-12 h-12 flex items-center justify-center rounded-full bg-white shadow-md hover:scale-105 transition'
+      >
+        <img src={icon} alt='social icon' className='w-6 h-6 object-contain' />
+      </div>
+    ))}
+  </div>
+</div>
           </div>
         </div>
-      </div>
-    </div>
   ) : (
     <div>Loading... </div>
   );

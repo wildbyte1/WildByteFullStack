@@ -28,7 +28,6 @@ import home_icon from './home_icon.svg'
 import Grayscale_Transparent from './Grayscale_Transparent.svg'
 import gradient from './gradient.svg'
 import facebook_icon from './facebook_icon.svg'
-import email_icon from './email_icon.png'
 import dashboard_icon from './dashboard_icon.svg'
 import cross_icon from './cross_icon.svg'
 import comment_icon from './comment_icon.svg'
@@ -37,6 +36,7 @@ import blog_icon from './blog_icon.png'
 import bin_icon from './bin_icon.svg'
 import star_solid from './star_solid.svg'
 import instagram_icon from './instagram_icon.svg'
+import email_icon from './email_icon.svg'
 
 export const assets = {
     add_icon,
