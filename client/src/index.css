@@ -18,6 +18,8 @@ body{
   --color-secondary: #C5D8AF;
   --color-text: #546259;
   --color-accent: #495A34;
+  --color-background: #EDEDE0;
+  --color-secondary-background: #E5EBD8;
 }
 
 .rich-text { font-size: 15px;  }
