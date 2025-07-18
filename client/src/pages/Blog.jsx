@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { assets, blog_data, comments_data } from '../assets/assets.js';
 import Navbar from '../components/Navbar';
 import Moment from 'moment';
+import Footer from '../components/Footer.jsx';
 
 const Blog = () => {
 
@@ -125,7 +126,7 @@ const Blog = () => {
     {[assets.facebook_icon, assets.instagram_icon, assets.x_twitter, assets.tiktok_icon, assets.email_icon].map((icon, index) => (
       <div
         key={index}
-        className='w-12 h-12 flex items-center justify-center rounded-full bg-white shadow-md hover:scale-105 transition'
+        className='w-12 h-12 flex items-center justify-center rounded-full bg-secondary-background shadow-md hover:scale-105 transition'
       >
         <img src={icon} alt='social icon' className='w-6 h-6 object-contain' />
       </div>
@@ -133,6 +134,7 @@ const Blog = () => {
   </div>
 </div>
           </div>
+          <Footer />
         </div>
   ) : (
     <div>Loading... </div>
