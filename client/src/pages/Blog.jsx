@@ -72,7 +72,7 @@ const Blog = () => {
             {comments.map((item, index) => (
               <div
                 key={index}
-                className='relative bg-secondary-background border border-secondary max-w-xl p-4 rounded text-text'
+                className='relative bg-white border border-secondary max-w-xl p-4 rounded text-accent'
               >
                 <div className='flex items-center gap-2 mb-2 '>
                   <img src={assets.user_icon} alt='user icon' className='w-6' />
