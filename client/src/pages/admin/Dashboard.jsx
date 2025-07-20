@@ -1,23 +1,21 @@
-import React, { useEffect, useState } from 'react'
-import { assets, dashboard_data } from '../../assets/assets.js'
+import React, { useEffect, useState } from 'react';
+import { assets, dashboard_data } from '../../assets/assets.js';
 
 const Dashboard = () => {
+  const [dashboardData, setDashboardData] = useState({
+    blogs: 0,
+    comments: 0,
+    drafts: 0,
+    recentBlogs: [],
+  });
 
-    const [dashboardData, setDashboardData] = useState({
-        blogs: 0,
-        comments: 0,
-        drafts: 0,
-        recentBlogs: []
-    })
+  const fetchDashboardData = async () => {
+    setDashboardData(dashboard_data);
+  };
 
-    const fetchDashboardData = async () => {
-        setDashboardData(dashboard_data)
-    }
-
-    useEffect(()=>{
-        fetchDashboardData()
-    },[])
-
+  useEffect(() => {
+    fetchDashboardData();
+  }, []);
 
   return (
     <div className='flex-1 p-4 md:p-10 bg-primary'>
@@ -46,11 +44,47 @@ const Dashboard = () => {
         ))}
       </div>
       <div className='flex items-center gap-3 m-4 mt-6 text-gray-600'>
-        <img className="w-6 h-5 object-contain" src={assets.latest_blogs} alt='' />
+        <img
+          className='w-6 h-5 object-contain'
+          src={assets.latest_blogs}
+          alt=''
+        />
         <p>Latest Blogs</p>
+      </div>
+
+      <div className='relative max-w-4xl overflow-auto shadow rounded-lg scrollbar-hide bg-white'>
+        <table className='w-full text-sm text-gray-500'>
+          <thead className='text-xs text-gray-600 text-left uppercase'>
+            <tr>
+              <th scope='col' className='px-2 py-4 xl:px-6'>
+                {' '}
+                #
+              </th>
+              <th scope='col' className='px-2 py-4'>
+                {' '}
+                Blog Title{' '}
+              </th>
+              <th scope='col' className='px-2 py-4 max-sm:hidden'>
+                {' '}
+                Date{' '}
+              </th>
+              <th scope='col' className='px-2 py-4 max-sm:hidden'>
+                {' '}
+                Status{' '}
+              </th>
+              <th scope='col' className='px-2 py-4'>
+                {' '}
+                Actions{' '}
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            
+          </tbody>
+        </table>
       </div>
     </div>
   );
-}
+};
 
-export default Dashboard
+export default Dashboard;
