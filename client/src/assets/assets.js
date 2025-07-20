@@ -38,6 +38,7 @@ import star_solid from './star_solid.svg'
 import instagram_icon from './instagram_icon.svg'
 import email_icon from './email_icon.svg'
 import loading_error from './loading_error.jpg'
+import latest_blogs from './latest_blogs.svg'
 
 export const assets = {
     add_icon,
@@ -64,6 +65,7 @@ export const assets = {
    star_solid,
    instagram_icon,
    loading_error,
+   latest_blogs,
 }
 export const blogCategories = ['All', 'Africa', 'Antarctica', 'Asia', 'Europe', 'North America', 'South America', 'Oceania']
 
