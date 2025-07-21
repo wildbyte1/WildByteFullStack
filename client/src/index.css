@@ -20,6 +20,7 @@ body{
   --color-accent: #495A34;
   --color-background: #EDEDE0;
   --color-secondary-background: #E5EBD8;
+  --color-alternative: #047236;
 }
 
 .rich-text { font-size: 15px;  }
