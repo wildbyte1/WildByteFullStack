@@ -1,18 +1,31 @@
 import React, { useEffect, useState} from 'react'
-import { blog_data } from '../../assets/assets'
+import { blog_data } from '../../assets/assets';
 import BlogTableItem from '../../components/admin/BlogTableItem'
+import { useAppContext } from '../../context/AppContext';
+import toast from 'react-hot-toast';
+
 
 const ListBlog = () => {
 
-const [blogs, setBlogs] = useState([])
+  const [blogs, setBlogs] = useState([]);
+  const {axios} = useAppContext()
 
-const fetchBlogs = async () => {
-  setBlogs(blog_data)
-}
+  const fetchBlogs = async () => {
+    try {
+      const {data} = await axios.get('/api/admin/blogs')
+      if (data.success) {
+        setBlogs(data.blogs)
+      } else {
+        toast.error(data.message)
+      }
+    } catch (error) {
+      toast.error(error.message)
+    }
+  }
 
-useEffect(() => {
-  fetchBlogs()
-}, [])
+  useEffect(() => {
+    fetchBlogs()
+  }, [])
 
   return (
     <div className='flex-1 pt-5 px-5 sm:pt-12 sm:pl-16 blg-blue-50/50'>
@@ -24,7 +37,7 @@ useEffect(() => {
             <tr>
               <th scope='col' className='px-2 py-4 xl:px-6'>
                 {' '}
-                #
+                #{' '}
               </th>
               <th scope='col' className='px-2 py-4'>
                 {' '}
@@ -46,20 +59,19 @@ useEffect(() => {
           </thead>
           <tbody>
             {blogs.map((blog, index) => {
-              return (
+              return 
                 <BlogTableItem
                   key={blog._id}
                   blog={blog}
                   fetchBlogs={fetchBlogs}
                   index={index + 1}
                 />
-              );
             })}
           </tbody>
         </table>
       </div>
     </div>
-  );
+  )
 }
 
 export default ListBlog

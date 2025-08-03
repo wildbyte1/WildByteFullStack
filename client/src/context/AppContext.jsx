@@ -5,7 +5,7 @@ import toast from 'react-hot-toast';
 
 axios.defaults.baseURL = import.meta.env.VITE_BASE_URL;
 
-const AppContext = createContext()
+const AppContext = createContext();
 
 export const AppProvider = ({ children })=>{
     
