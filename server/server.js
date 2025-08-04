@@ -10,8 +10,13 @@ const app = express();
 await connectDB()
 
 // Middlewares
-app.use(cors())
-app.use(express.json())
+app.use(
+  cors({
+    origin: 'https://wild-byte-full-stack.vercel.app',
+    credentials: true,
+  })
+);
+app.use(express.json());
 
 // Routes
 app.get('/', (req, res)=> res.send("API is Working"))
