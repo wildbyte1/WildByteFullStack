@@ -148,21 +148,46 @@ const Blog = () => {
 
         {/* Share Buttons */}
         <div className='my-24 max-w-3xl mx-auto'>
-  <p className='font-semibold my-4 text-accent'>Share this article on social media</p>
-  <div className='flex gap-4'>
-    {[assets.facebook_icon, assets.instagram_icon, assets.x_twitter, assets.tiktok_icon, assets.email_icon].map((icon, index) => (
-      <div
-        key={index}
-        className='w-12 h-12 flex items-center justify-center rounded-full bg-secondary-background shadow-md hover:scale-105 transition'
-      >
-        <img src={icon} alt='social icon' className='w-6 h-6 object-contain' />
-      </div>
-    ))}
-  </div>
-</div>
+          <p className='font-semibold my-4 text-accent'>
+            Share this article on social media
+          </p>
+
+          <div className='flex gap-4'>
+            {[
+              {
+                icon: assets.facebook_icon,
+                url: 'https://www.facebook.com/profile.php?id=61579262037395',
+              },
+              {
+                icon: assets.instagram_icon,
+                url: 'https://www.instagram.com/wildbyteai/',
+              },
+              { icon: assets.x_twitter, url: 'https://x.com/wild_byte' },
+              {
+                icon: assets.tiktok_icon,
+                url: 'https://www.tiktok.com/@wildbyte23',
+              },
+              { icon: assets.email_icon, url: 'mailto:angelica@avictoria.dev' },
+            ].map((item, index) => (
+              <a
+                key={index}
+                href={item.url}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='w-12 h-12 flex items-center justify-center rounded-full bg-secondary-background shadow-md hover:scale-105 transition'
+              >
+                <img
+                  src={item.icon}
+                  alt='social icon'
+                  className='w-6 h-6 object-contain'
+                />
+              </a>
+            ))}
           </div>
-          <Footer />
         </div>
+      </div>
+      <Footer />
+    </div>
   ) : (
     <Loader />
   );
