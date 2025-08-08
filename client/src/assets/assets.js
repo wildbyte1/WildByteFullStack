@@ -266,16 +266,22 @@ export const dashboard_data = {
 export const footer_data = [
   {
     title: 'Quick Links',
-    links: ['Home', 'Best Sellers', 'Offers & Deals', 'Contact Us', 'FAQs'],
+    links: [
+      { name: 'Home', url: '/' },
+      { name: 'Best Sellers', url: '/best-sellers' },
+      { name: 'Offers & Deals', url: '/offers' },
+      { name: 'Contact Us', url: '/contact' },
+      { name: 'FAQs', url: '/faqs' },
+    ],
   },
   {
     title: 'Need Help?',
     links: [
-      'Delivery Information',
-      'Return & Refund Policy',
-      'Payment Methods',
-      'Track your Order',
-      'Contact Us',
+      { name: 'Delivery Information', url: '/delivery' },
+      { name: 'Return & Refund Policy', url: '/returns' },
+      { name: 'Payment Methods', url: '/payment-methods' },
+      { name: 'Track your Order', url: '/track-order' },
+      { name: 'Contact Us', url: '/contact' },
     ],
   },
   {

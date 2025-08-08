@@ -27,18 +27,27 @@ const Footer = () => {
                 {section.title}
               </h3>
               <ul className='text-sm space-y-1'>
-                {section.links.map((link, i) => (
-                  <li key={i}>
-                    <a
-                      href={link.url}
-                      target={link.url.startsWith('http') ? '_blank' : '_self'}
-                      rel='noopener noreferrer'
-                      className='hover:underline transition'
-                    >
-                      {link}
-                    </a>
-                  </li>
-                ))}
+                {section.links.map((link, i) => {
+                  // If link is a string, treat it as a name with no URL
+                  const name = typeof link === 'string' ? link : link.name;
+                  const url = typeof link === 'string' ? '#' : link.url;
+
+                  const isExternal =
+                    typeof url === 'string' && url.startsWith('http');
+
+                  return (
+                    <li key={i}>
+                      <a
+                        href={url}
+                        target={isExternal ? '_blank' : '_self'}
+                        rel={isExternal ? 'noopener noreferrer' : undefined}
+                        className='hover:underline transition'
+                      >
+                        {name}
+                      </a>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}
