@@ -29,7 +29,12 @@ const Footer = () => {
               <ul className='text-sm space-y-1'>
                 {section.links.map((link, i) => (
                   <li key={i}>
-                    <a href='#' className='hover:underline transition'>
+                    <a
+                      href={link.url}
+                      target={link.url.startsWith('http') ? '_blank' : '_self'}
+                      rel='noopener noreferrer'
+                      className='hover:underline transition'
+                    >
                       {link}
                     </a>
                   </li>
