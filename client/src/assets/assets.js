@@ -280,6 +280,14 @@ export const footer_data = [
   },
   {
     title: 'Follow Us',
-    links: ['Instagram', 'Twitter', 'Facebook', 'YouTube'],
+    links: [
+      { name: 'Instagram', url: 'https://www.instagram.com/wildbyteai/' },
+      { name: 'Twitter', url: 'https://x.com/wild_byte' },
+      {
+        name: 'Facebook',
+        url: 'https://www.facebook.com/profile.php?id=61579262037395',
+      },
+      { name: 'TikTok', url: 'https://www.tiktok.com/@wildbyte23' },
+    ],
   },
 ];
