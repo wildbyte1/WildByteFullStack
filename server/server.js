@@ -9,8 +9,27 @@ const app = express();
 
 await connectDB();
 
-// Middlewares
-app.use(cors());
+// Explicit CORS settings
+app.use(
+  cors({
+    origin: 'https://wild-byte-full-stack.vercel.app', // your frontend URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,
+  })
+);
+
+// Handle OPTIONS preflight requests globally
+app.options(
+  '*',
+  cors({
+    origin: 'https://wild-byte-full-stack.vercel.app',
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,
+  })
+);
+
 app.use(express.json());
 
 // Routes
