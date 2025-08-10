@@ -3,18 +3,14 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 
-// Automatically detect backend URL based on where the app is running
-const getBaseURL = () => {
-  if (window.location.hostname === 'localhost') {
-    return 'http://localhost:3000'; // local dev server
-  } else if (window.location.hostname.includes('vercel.app')) {
-    return 'https://wild-byte-server.vercel.app'; // your Vercel backend
-  }
-  // default fallback
-  return 'https://wild-byte-server.vercel.app';
-};
+// ✅ Automatically choose backend URL based on environment
+const API_BASE_URL =
+  import.meta.env.MODE === 'development'
+    ? 'http://localhost:3000'
+    : 'https://wild-byte-server.vercel.app';
 
-axios.defaults.baseURL = getBaseURL();
+axios.defaults.baseURL = API_BASE_URL;
+axios.defaults.withCredentials = true; // ✅ Send cookies / credentials
 
 const AppContext = createContext();
 
@@ -36,10 +32,11 @@ export const AppProvider = ({ children }) => {
 
   useEffect(() => {
     fetchBlogs();
-    const token = localStorage.getItem('token');
-    if (token) {
-      setToken(token);
-      axios.defaults.headers.common['Authorization'] = `${token}`;
+
+    const storedToken = localStorage.getItem('token');
+    if (storedToken) {
+      setToken(storedToken);
+      axios.defaults.headers.common['Authorization'] = `${storedToken}`;
     }
   }, []);
 

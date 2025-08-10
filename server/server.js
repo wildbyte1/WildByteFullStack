@@ -9,39 +9,38 @@ const app = express();
 
 await connectDB();
 
-// List of allowed frontend URLs
-const allowedOrigins = [
-  'https://wild-byte-full-stack.vercel.app',
-  'https://wild-byte-full-stack-git-main-angelica-victorias-projects.vercel.app', // preview deploy
-  'http://localhost:5173',
-];
+// ✅ Dynamic CORS
+app.use((req, res, next) => {
+  const origin = req.headers.origin;
+  if (origin) {
+    res.header('Access-Control-Allow-Origin', origin); // echo back request origin
+  }
+  res.header('Access-Control-Allow-Credentials', 'true');
+  res.header(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+  );
+  res.header(
+    'Access-Control-Allow-Methods',
+    'GET, POST, PUT, PATCH, DELETE, OPTIONS'
+  );
 
-app.use(
-  cors({
-    origin: function (origin, callback) {
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error('Not allowed by CORS'));
-      }
-    },
-    credentials: true,
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    allowedHeaders: ['Content-Type', 'Authorization'],
-  })
-);
-
-app.options('*', cors()); // ✅ handle preflight
+  if (req.method === 'OPTIONS') {
+    return res.sendStatus(200); // end preflight requests quickly
+  }
+  next();
+});
 
 app.use(express.json());
 
-// Routes
+// ✅ Health check route
 app.get('/', (req, res) => res.send('API is Working'));
+
+// ✅ Routes
 app.use('/api/admin', adminRouter);
 app.use('/api/blog', blogRouter);
 
 const PORT = process.env.PORT || 3000;
-
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
