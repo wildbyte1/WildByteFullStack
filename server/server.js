@@ -1,6 +1,5 @@
 import express from 'express';
 import 'dotenv/config';
-import cors from 'cors';
 import connectDB from './configs/db.js';
 import adminRouter from './routes/adminRoutes.js';
 import blogRouter from './routes/blogRoutes.js';
@@ -10,8 +9,8 @@ await connectDB();
 
 // Allowed origins
 const allowedOrigins = [
-  'http://localhost:5173', // local dev
-  'https://wild-byte-full-stack.vercel.app', // deployed frontend
+  'http://localhost:5173',
+  'https://wild-byte-full-stack.vercel.app',
 ];
 
 // Dynamic CORS middleware
@@ -23,7 +22,6 @@ app.use((req, res, next) => {
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
     res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
   }
-  // Handle preflight requests
   if (req.method === 'OPTIONS') {
     return res.sendStatus(200);
   }
