@@ -3,14 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 
-// ✅ Automatically choose backend URL based on environment
-const API_BASE_URL =
-  import.meta.env.MODE === 'development'
-    ? 'http://localhost:3000'
-    : 'https://wild-byte-server.vercel.app';
-
-axios.defaults.baseURL = API_BASE_URL;
-axios.defaults.withCredentials = true; // ✅ Send cookies / credentials
+axios.defaults.baseURL = import.meta.env.VITE_BASE_URL;
 
 const AppContext = createContext();
 
@@ -32,11 +25,10 @@ export const AppProvider = ({ children }) => {
 
   useEffect(() => {
     fetchBlogs();
-
-    const storedToken = localStorage.getItem('token');
-    if (storedToken) {
-      setToken(storedToken);
-      axios.defaults.headers.common['Authorization'] = `${storedToken}`;
+    const token = localStorage.getItem('token');
+    if (token) {
+      setToken(token);
+      axios.defaults.headers.common['Authorization'] = `${token}`;
     }
   }, []);
 
