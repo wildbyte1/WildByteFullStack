@@ -4,8 +4,8 @@ import { assets, footer_data } from '../assets/assets.js';
 const Footer = () => {
   return (
     <div className='px-6 md:px-16 lg:px-24 xl:px-32 bg-primary'>
-      <div className='flex flex-col md:flex-row items-stretch justify-between gap-10 py-10 border-b border-gray-500/30 text-gray-500'>
-        {/* Left section: Logo + Description */}
+      <div className='flex flex-col md:flex-row items-start justify-between gap-10 py-10 border-b border-gray-500/30 text-gray-500'>
+        {/* Column 1: Logo + Description */}
         <div className='flex flex-col gap-3 max-w-[350px]'>
           <img
             src={assets.Transparent_Logo}
@@ -22,47 +22,44 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Right section: Land acknowledgment + links */}
-        <div className='flex flex-col gap-8 w-full md:w-[55%]'>
-          {/* Land acknowledgment */}
-          <p className='text-xs font-semibold text-gray-600'>
-            Wild Byte was created on the ancestral lands of the Tongva people. I
-            honor and recognize the Tongva as the original stewards of this
-            land. This project is offered with respect and gratitude for the
-            Tongva community—past, present, and future.
-          </p>
+        {/* Column 2: Land Acknowledgment */}
+        <div className='max-w-[320px] border-l-2 border-gray-400/30 pl-4 italic text-xs font-semibold text-gray-600 leading-relaxed'>
+          Wild Byte was created on the ancestral lands of the Tongva people. I
+          honor and recognize the Tongva as the original stewards of this land.
+          This project is offered with respect and gratitude for the Tongva
+          community—past, present, and future.
+        </div>
 
-          {/* Footer links */}
-          <div className='flex flex-wrap justify-between gap-5'>
-            {footer_data.map((section, index) => (
-              <div key={index} className='min-w-[140px]'>
-                <h3 className='font-semibold text-base text-text md:mb-5 mb-2'>
-                  {section.title}
-                </h3>
-                <ul className='text-sm space-y-1'>
-                  {section.links.map((link, i) => {
-                    const name = typeof link === 'string' ? link : link.name;
-                    const url = typeof link === 'string' ? '#' : link.url;
-                    const isExternal =
-                      typeof url === 'string' && url.startsWith('http');
+        {/* Column 3: Footer Links */}
+        <div className='flex flex-wrap justify-between w-full md:w-[45%] gap-5'>
+          {footer_data.map((section, index) => (
+            <div key={index} className='min-w-[140px]'>
+              <h3 className='font-semibold text-base text-text md:mb-5 mb-2'>
+                {section.title}
+              </h3>
+              <ul className='text-sm space-y-1'>
+                {section.links.map((link, i) => {
+                  const name = typeof link === 'string' ? link : link.name;
+                  const url = typeof link === 'string' ? '#' : link.url;
+                  const isExternal =
+                    typeof url === 'string' && url.startsWith('http');
 
-                    return (
-                      <li key={i}>
-                        <a
-                          href={url}
-                          target={isExternal ? '_blank' : '_self'}
-                          rel={isExternal ? 'noopener noreferrer' : undefined}
-                          className='hover:underline transition'
-                        >
-                          {name}
-                        </a>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-            ))}
-          </div>
+                  return (
+                    <li key={i}>
+                      <a
+                        href={url}
+                        target={isExternal ? '_blank' : '_self'}
+                        rel={isExternal ? 'noopener noreferrer' : undefined}
+                        className='hover:underline transition'
+                      >
+                        {name}
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          ))}
         </div>
       </div>
 
