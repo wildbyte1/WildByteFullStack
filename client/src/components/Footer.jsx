@@ -19,6 +19,7 @@ const Footer = () => {
             invites learners to explore the wild through shared voices and
             digital discovery.
           </p>
+          <p>Wild Byte was created on the ancestral lands of the Tongva people. I honor and recognize the Tongva as the original stewards of this land. This project is offered with respect and gratitude for the Tongva community--past, present, and future.</p>
         </div>
         <div className='flex flex-wrap justify-between w-full md:w-[45%] gap-5 self-stretch'>
           {footer_data.map((section, index) => (
