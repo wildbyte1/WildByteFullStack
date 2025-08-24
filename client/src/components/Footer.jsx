@@ -30,8 +30,8 @@ const Footer = () => {
           community—past, present, and future.
         </div>
 
-        {/* Column 3: Footer Links (2 clean columns) */}
-        <div className='grid grid-cols-2 gap-6 w-full md:w-[45%]'>
+        {/* Column 3: Footer Links (2 clean columns, pushed right) */}
+        <div className='grid grid-cols-2 gap-6 w-full md:w-[40%] ml-auto'>
           {footer_data.map((section, index) => (
             <div key={index} className='min-w-[140px]'>
               <h3 className='font-semibold text-base text-text md:mb-5 mb-2'>
