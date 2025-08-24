@@ -269,6 +269,7 @@ export const footer_data = [
     links: [
       { name: 'Home', url: '/' },
       { name: 'Shop', url: '/shop' },
+      { name: 'Education Hub', url: '/education'},
       { name: 'Contact Us', url: '/contact' },
       { name: 'FAQs', url: '/faqs' },
     ],
