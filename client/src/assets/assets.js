@@ -268,20 +268,9 @@ export const footer_data = [
     title: 'Quick Links',
     links: [
       { name: 'Home', url: '/' },
-      { name: 'Best Sellers', url: '/best-sellers' },
-      { name: 'Offers & Deals', url: '/offers' },
+      { name: 'Shop', url: '/shop' },
       { name: 'Contact Us', url: '/contact' },
       { name: 'FAQs', url: '/faqs' },
-    ],
-  },
-  {
-    title: 'Need Help?',
-    links: [
-      { name: 'Delivery Information', url: '/delivery' },
-      { name: 'Return & Refund Policy', url: '/returns' },
-      { name: 'Payment Methods', url: '/payment-methods' },
-      { name: 'Track your Order', url: '/track-order' },
-      { name: 'Contact Us', url: '/contact' },
     ],
   },
   {
