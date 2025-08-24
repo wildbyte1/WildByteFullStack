@@ -4,7 +4,7 @@ import { assets, footer_data } from '../assets/assets.js';
 const Footer = () => {
   return (
     <div className='px-6 md:px-16 lg:px-24 xl:px-32 bg-primary'>
-      <div className='flex flex-col md:flex-row items-start justify-between gap-10 py-10 border-b border-gray-500/30 text-gray-500'>
+      <div className='flex flex-col md:flex-row items-start justify-between gap-8 py-10 border-b border-gray-500/30 text-gray-500'>
         {/* Column 1: Logo + Description */}
         <div className='flex flex-col gap-3 max-w-[350px]'>
           <img
@@ -23,7 +23,7 @@ const Footer = () => {
         </div>
 
         {/* Column 2: Land Acknowledgment */}
-        <div className='max-w-[320px] border-l-2 border-gray-400/30 pl-4 italic text-xs font-semibold text-gray-600 leading-relaxed'>
+        <div className='max-w-[320px] bg-gray-100 border-l-2 border-gray-400/30 pl-3 py-3 italic text-xs font-semibold text-gray-600 leading-relaxed rounded-md'>
           Wild Byte was created on the ancestral lands of the Tongva people. I
           honor and recognize the Tongva as the original stewards of this land.
           This project is offered with respect and gratitude for the Tongva
